@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+   </head>
+   <body>
+     <p>Adder...<span id='op'>5+3</span>
+		<span id="res"></span> <a href='javascript:sum("op","res")'>Add!</a>
+	 </p>
+   <p><span>Get a <a href='javascript:newOp("op")'>new one</a></span></p>  
+   </body>
+   <script type="text/javascript" charset="utf-8">
+      function sum(op,res){
+        var operation = document.getElementById(op);
+		    var operands = operation.innerHTML.split("+");
+        var suma = parseInt(operands[0]) + parseInt(operands[1]);
+		    document.getElementById(res).innerHTML = ('=' + suma);
+      }
+
+      function newOp(op){
+        var s1 = Math.floor(Math.random()*100);
+        var s2 = Math.floor(Math.random()*50);
+        var newOperation = s1 + '+' + s2;
+        document.getElementById(op).innerHTML = newOperation; 
+      }
+   </script>
+</html>
